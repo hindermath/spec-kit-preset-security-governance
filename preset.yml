@@ -1,0 +1,111 @@
+schema_version: "1.0"
+
+preset:
+  id: "security-governance"
+  name: "Security Governance"
+  version: "0.2.0"
+  description: "Adds memory-safe-language preference, secure code generation, ASVS verification, supply-chain transparency, and EU Cyber Resilience Act awareness to Spec Kit."
+  author: "Thorsten Hindermann"
+  repository: "https://github.com/hindermath/spec-kit-preset-security-governance"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=0.8.0"
+
+provides:
+  templates:
+    - type: "template"
+      name: "constitution-template"
+      file: "templates/constitution-addendum.md"
+      description: "Append secure-development governance principles"
+      strategy: "append"
+
+    - type: "template"
+      name: "spec-template"
+      file: "templates/spec-addendum.md"
+      description: "Append security applicability and evidence requirements"
+      strategy: "append"
+
+    - type: "template"
+      name: "plan-template"
+      file: "templates/plan-addendum.md"
+      description: "Append secure-development planning checks"
+      strategy: "append"
+
+    - type: "template"
+      name: "tasks-template"
+      file: "templates/tasks-addendum.md"
+      description: "Append explicit security and supply-chain tasks"
+      strategy: "append"
+
+    - type: "template"
+      name: "security-agent-guidance-addendum-template"
+      file: "templates/agent-file-addendum.md"
+      description: "Standalone agent guidance addendum for security governance"
+
+    - type: "template"
+      name: "msl-applicability-template"
+      file: "templates/msl-applicability-template.md"
+      description: "Starter memory-safe language applicability record"
+
+    - type: "template"
+      name: "security-checklist-template"
+      file: "templates/security-checklist-template.md"
+      description: "Starter security review checklist with CWE Top 25 and language-specific sections"
+
+    - type: "template"
+      name: "secure-coding-language-rules-template"
+      file: "templates/secure-coding-language-rules-template.md"
+      description: "Starter language-specific secure coding rules (C, C#/.NET, SQL, Bash, PowerShell)"
+
+    - type: "template"
+      name: "dependency-audit-template"
+      file: "templates/dependency-audit-template.md"
+      description: "Starter dependency and CVE review document with automation guidance"
+
+    - type: "template"
+      name: "asvs-verification-template"
+      file: "templates/asvs-verification-template.md"
+      description: "Starter ASVS verification document with explicit Level 1/2/3 selection"
+
+    - type: "template"
+      name: "supply-chain-evidence-template"
+      file: "templates/supply-chain-evidence-template.md"
+      description: "Starter SBOM/VEX/SLSA/OpenSSF Scorecard evidence document"
+
+    - type: "template"
+      name: "cra-applicability-template"
+      file: "templates/cra-applicability-template.md"
+      description: "Starter EU Cyber Resilience Act applicability and conformity assessment record"
+
+    - type: "command"
+      name: "speckit.specify"
+      file: "commands/speckit.specify.md"
+      description: "Wrap specify with security-governance checks"
+      strategy: "wrap"
+
+    - type: "command"
+      name: "speckit.plan"
+      file: "commands/speckit.plan.md"
+      description: "Wrap plan with security-governance checks"
+      strategy: "wrap"
+
+    - type: "command"
+      name: "speckit.tasks"
+      file: "commands/speckit.tasks.md"
+      description: "Wrap tasks with security-governance checks"
+      strategy: "wrap"
+
+tags:
+  - "security"
+  - "governance"
+  - "msl"
+  - "ssdf"
+  - "asvs"
+  - "supply-chain"
+  - "sbom"
+  - "vex"
+  - "slsa"
+  - "cwe-top-25"
+  - "cra"
+  - "cyber-resilience-act"

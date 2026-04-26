@@ -1,0 +1,25 @@
+## Security Governance Agent Guidance
+
+- Determine whether the primary implementation language is memory-safe.
+- If it is not memory-safe, surface the justification (constraint named,
+  not just the fact restated) rather than silently ignoring the rule.
+- If it is memory-safe, still apply the secure-coding best practices of that
+  specific MSL and framework — MSL preference does not replace secure code
+  generation.
+- For every security-relevant change, identify the affected `CWE Top 25`
+  weaknesses and record the chosen mitigation. Do not leave this implicit.
+- Determine whether `NIST SSDF`, `OWASP ASVS` (with explicit Level 1/2/3),
+  `SBOM`, `VEX`, `SLSA`, and `OpenSSF Scorecard` apply.
+- For Web/API features, name the chosen ASVS Level and the verification
+  scope; never leave the level unspecified.
+- For dependency changes, prefer Renovatebot/Dependabot for update PRs and
+  Dependency Track for continuous CVE monitoring. Treat static audit notes
+  as supplementary evidence, not as the primary control.
+- Document every `N/A` decision with rationale.
+- Surface required evidence artefacts under `docs/security/`. Default
+  templates: `security-checklist`, `secure-coding-language-rules`,
+  `dependency-audit`, `asvs-verification`, `supply-chain-evidence`,
+  `msl-applicability`, `cra-applicability`.
+- For any change that affects distribution, EU market reach, or
+  vulnerability handling, surface the EU Cyber Resilience Act applicability
+  question instead of leaving it implicit.
