@@ -65,6 +65,7 @@ completed rules document below.
 - Dependency audit entry/section:
 - ASVS verification entry (with Level):
 - Supply-chain evidence entry:
+- AI-SBOM applicability/evidence entry:
 - CRA applicability entry:
 
 ## Follow-Up

@@ -1,14 +1,14 @@
 # Security Governance Preset
 
-Version: `0.2.0`
+Version: `0.3.0`
 Requires: `spec-kit >= 0.8.0` (uses the `wrap` and `append` composition
 strategies introduced in 0.8.x).
 
 Purpose:
 
 - inject secure-development governance into Spec Kit workflows
-- cover code-level controls, SDLC controls, supply-chain transparency, and
-  EU regulatory awareness
+- cover code-level controls, SDLC controls, SBOM/AI-SBOM supply-chain
+  transparency, and EU regulatory awareness
 - stay focused on code and process; architectural depth lives in the
   `architecture-governance` preset
 
@@ -28,6 +28,7 @@ Standards in scope:
 - `CWE Top 25`
 - `OWASP ASVS` with explicit Level 1/2/3 selection
 - `SBOM` and `VEX`
+- `AI-SBOM` / G7 SBOM for AI minimum elements
 - `SLSA`
 - `OpenSSF Scorecard`
 - `EU CRA` (Regulation (EU) 2024/2847)
@@ -53,7 +54,7 @@ Evidence templates included:
 - `dependency-audit-template` (with Renovatebot/Dependabot/Dependency
   Track automation posture)
 - `asvs-verification-template` (with explicit Level 1/2/3 rationale)
-- `supply-chain-evidence-template` (SBOM, VEX, SLSA, OpenSSF Scorecard)
+- `supply-chain-evidence-template` (SBOM, AI-SBOM, VEX, SLSA, OpenSSF Scorecard)
 - `cra-applicability-template`
 
 Default evidence location: `docs/security/`. MSL justification may live in
@@ -67,6 +68,19 @@ When to use:
 - projects with web, API, release, or dependency risk
 - projects that may fall under the EU Cyber Resilience Act
 - organisations that need reusable secure-development evidence stubs
+- projects that use AI runtime or product components and need internal
+  transparency for models, datasets, inference infrastructure, and security
+  properties
+
+AI-SBOM applicability:
+
+- AI used only as development tooling (code generation, documentation, review,
+  local agents) is documented as `N/A` with a short toolchain rationale.
+- AI models, AI services, training or embedding datasets, inference
+  infrastructure, or AI runtime components in the released or operated system
+  trigger AI-SBOM evidence.
+- The G7/BSI AI-SBOM minimum elements are treated as target architecture, not
+  as a direct legal obligation by themselves.
 
 When not to use:
 

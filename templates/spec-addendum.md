@@ -10,6 +10,9 @@
   - `OWASP ASVS` applies to web, API, HTTP, and authentication-bearing services
     (record the chosen ASVS Level: 1, 2, or 3).
   - `SBOM` and `VEX` apply to release-capable or distributable artefacts.
+  - `AI-SBOM` applies when AI models, AI services, datasets, inference
+    infrastructure, or AI runtime components are part of the released or
+    operated system.
   - `SLSA` applies as a target model for CI/CD-built or published artefacts.
   - `OpenSSF Scorecard` applies to public OSS repositories or high-impact
     external dependencies.
@@ -28,6 +31,10 @@
 - Evidence files default to `docs/security/`.
 - When a feature changes dependencies, build integrity, or HTTP-facing
   behaviour, include explicit evidence expectations in the specification.
+- When a feature uses AI only as development tooling, record `AI-SBOM` as
+  `N/A` with a short toolchain rationale. When AI runtime or product
+  components are present, declare the supply-chain evidence path for the
+  G7/BSI AI-SBOM clusters.
 - When a feature changes user-visible product distribution, EU market
   presence, or vulnerability handling processes, record CRA implications.
 - When secrets, cryptographic primitives, authentication, or authorisation

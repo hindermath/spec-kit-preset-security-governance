@@ -48,7 +48,7 @@
 ### Standards applicability
 
 - Determine which of `NIST SSDF` (SP 800-218), `CWE Top 25`, `OWASP ASVS`,
-  `SBOM`, `VEX`, `SLSA`, `OWASP Cheat Sheet Series`, `OWASP Proactive
+  `SBOM`, `AI-SBOM`, `VEX`, `SLSA`, `OWASP Cheat Sheet Series`, `OWASP Proactive
   Controls`, and `OpenSSF Scorecard` apply to this project.
 - `NIST SSDF` and `CWE Top 25` are never `N/A` for production-bound work.
 - Web, API, HTTP, and authentication-bearing services MUST select an
@@ -66,8 +66,9 @@
 - Web/API projects MUST additionally maintain an ASVS verification document
   (`asvs-verification-template`).
 - Release-capable or distributable projects MUST maintain a Supply-Chain
-  Evidence document (`supply-chain-evidence-template`) covering SBOM, VEX,
-  SLSA, and where applicable OpenSSF Scorecard observations.
+  Evidence document (`supply-chain-evidence-template`) covering SBOM, AI-SBOM
+  applicability where relevant, VEX, SLSA, and where applicable OpenSSF
+  Scorecard observations.
 - Default evidence location: `docs/security/`.
 
 ### Supply-chain transparency
@@ -75,6 +76,15 @@
 - Every release-capable or distributable project MUST generate a
   machine-readable `SBOM` for each released artefact set, regardless of
   whether the SBOM is published externally.
+- Projects that include AI models, AI services, training or embedding
+  datasets, inference infrastructure, or AI runtime components in a released
+  artefact or operated system MUST assess whether an `AI-SBOM` is applicable.
+  When applicable, the supply-chain evidence MUST cover the seven G7/BSI
+  AI-SBOM clusters: metadata, system-level properties, models, datasets,
+  infrastructure, security properties, and key performance indicators.
+- AI tools used only for development assistance do not by themselves require a
+  product `AI-SBOM`; record `AI-SBOM` as `N/A` with a short toolchain rationale
+  when supply-chain evidence is maintained.
 - Where shipped or evaluated components have known vulnerabilities, the
   project MUST record a `VEX`-style status statement (affected, not affected,
   mitigated, under investigation).
@@ -101,6 +111,11 @@
   - alignment with secure-by-design and secure-by-default principles.
 - All projects SHOULD align practices with CRA principles regardless of
   formal scope, because the CRA reflects emerging baseline expectations.
+- Projects with AI runtime components SHOULD record whether the EU AI Act,
+  CRA, or sector-specific rules create additional transparency, supply-chain,
+  or security obligations. The G7/BSI AI-SBOM minimum elements do not create
+  direct legal obligations by themselves, but SHOULD be used as target
+  architecture for systems that ship or operate AI components.
 - The CRA applicability decision MUST be recorded in `docs/security/`
   (default: `cra-applicability-template`) or equivalent governance
   documentation, including for `N/A` decisions.

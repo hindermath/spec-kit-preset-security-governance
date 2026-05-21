@@ -9,12 +9,16 @@
 - For every security-relevant change, identify the affected `CWE Top 25`
   weaknesses and record the chosen mitigation. Do not leave this implicit.
 - Determine whether `NIST SSDF`, `OWASP ASVS` (with explicit Level 1/2/3),
-  `SBOM`, `VEX`, `SLSA`, and `OpenSSF Scorecard` apply.
+  `SBOM`, `AI-SBOM`, `VEX`, `SLSA`, and `OpenSSF Scorecard` apply.
 - For Web/API features, name the chosen ASVS Level and the verification
   scope; never leave the level unspecified.
 - For dependency changes, prefer Renovatebot/Dependabot for update PRs and
   Dependency Track for continuous CVE monitoring. Treat static audit notes
   as supplementary evidence, not as the primary control.
+- For AI usage, distinguish development tooling from AI runtime/product
+  components. Development-tool-only AI usage is `AI-SBOM: N/A`; AI runtime or
+  product components require supply-chain evidence using the G7/BSI AI-SBOM
+  clusters.
 - Document every `N/A` decision with rationale.
 - Surface required evidence artefacts under `docs/security/`. Default
   templates: `security-checklist`, `secure-coding-language-rules`,
