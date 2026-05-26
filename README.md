@@ -1,14 +1,15 @@
 # Security Governance Preset
 
-Version: `0.3.0`
+Version: `0.4.0`
 Requires: `spec-kit >= 0.8.0` (uses the `wrap` and `append` composition
 strategies introduced in 0.8.x).
 
 Purpose:
 
 - inject secure-development governance into Spec Kit workflows
-- cover code-level controls, SDLC controls, SBOM/AI-SBOM supply-chain
-  transparency, and EU regulatory awareness
+- cover code-level controls, language-specific secure-coding profiles, SDLC
+  controls, SBOM/AI-SBOM supply-chain transparency, and EU regulatory
+  awareness
 - stay focused on code and process; architectural depth lives in the
   `architecture-governance` preset
 
@@ -48,8 +49,9 @@ Preset strategy:
 Evidence templates included:
 
 - `msl-applicability-template`
-- `secure-coding-language-rules-template` (C, C#/.NET, SQL, Bash,
-  PowerShell, cryptography, error handling)
+- `secure-coding-language-rules-template` (C, C#/.NET, Rust, Go, Swift,
+  Java/Kotlin, Python, TypeScript/JavaScript, SQL, Bash, PowerShell,
+  cryptography, error handling)
 - `security-checklist-template` (with `CWE Top 25` mapping table)
 - `dependency-audit-template` (with Renovatebot/Dependabot/Dependency
   Track automation posture)
@@ -94,6 +96,10 @@ MSL notes:
 - `Best practices of MSL languages` are treated as the combination of `XI`
   and `XII`: `XI` governs language choice; `XII` governs how the chosen
   language is used
+- `v0.4.0` expands the language-specific secure-coding template so that MSL
+  projects still review concrete framework/API usage for Rust, Go, Swift,
+  Java/Kotlin, Python, and TypeScript/JavaScript instead of treating the
+  language choice as sufficient
 - the addendum surfaces a non-blocking advisory pattern; a runtime warning
   in the Spec Kit CLI itself is tracked separately
 

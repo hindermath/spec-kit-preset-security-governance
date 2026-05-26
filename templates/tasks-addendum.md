@@ -5,8 +5,10 @@
 - Add explicit secure-coding review tasks for any change to input handling,
   authentication, authorisation, cryptography, file I/O, or network I/O.
 - Reference the relevant language section from
-  `secure-coding-language-rules-template` (C, C#/.NET, SQL, Bash,
-  PowerShell, …) in those tasks.
+  `secure-coding-language-rules-template` (C, C#/.NET, Rust, Go, Swift,
+  Java/Kotlin, Python, TypeScript/JavaScript, SQL, Bash, PowerShell, …) in
+  those tasks. MSL status alone is not sufficient evidence of secure API,
+  I/O, authentication, database, cryptography, logging, or dependency usage.
 - Add `CWE Top 25` mapping tasks for security-relevant changes so that the
   chosen mitigation per affected weakness is recorded explicitly.
 - Add dependency-audit tasks when dependencies, registries, or build tooling

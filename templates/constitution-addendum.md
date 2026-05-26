@@ -31,7 +31,20 @@
   - C / C89: bounds checking, no `gets()`, no unchecked `sprintf()`/`strcpy()`,
     integer overflow guards, CERT C.
   - C# / .NET: parameterised queries, output encoding, anti-forgery tokens,
-    secure deserialisation, Microsoft Secure Coding Guidelines.
+    policy-based authorisation, secure deserialisation, Microsoft Secure
+    Coding Guidelines.
+  - Rust: isolate `unsafe`, avoid panic paths from untrusted input, validate
+    deserialised data, use reviewed crypto and dependency-audit tooling.
+  - Go: set HTTP timeouts, propagate `context`, prevent SSRF, use
+    `crypto/rand`, and run `govulncheck` or equivalent.
+  - Swift: avoid force unwraps on untrusted data, validate decoded input, use
+    Keychain/CryptoKit/platform TLS defaults, and constrain file URLs.
+  - Java / Kotlin: validate DTOs, parameterise persistence access, restrict
+    deserialisation, enforce framework auth/CSRF/CORS/session settings.
+  - Python: validate boundary input, avoid unsafe deserialisation and dynamic
+    execution, constrain subprocess/file access, run dependency auditing.
+  - TypeScript / JavaScript: validate runtime input, prevent XSS/prototype
+    pollution/SSRF, avoid dynamic code execution, audit lock files.
   - SQL: parameterised statements only, least-privilege accounts, no dynamic
     SQL from untrusted input.
   - Bash: quoted variables, no `eval` on untrusted input, `--` end-of-options.

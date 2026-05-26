@@ -50,10 +50,19 @@ list and add any non-listed weaknesses that apply.)
 
 For each applicable language, fill out the matching section in
 `secure-coding-language-rules-template`. Record the location of the
-completed rules document below.
+completed rules document below. Memory-safe language status does not replace
+this language-specific review; use the matching section to verify secure API
+usage, input/output handling, authentication, database access, cryptography,
+logging, and dependency handling.
 
 - C / C89 rules location:
 - C# / .NET rules location:
+- Rust rules location:
+- Go rules location:
+- Swift rules location:
+- Java / Kotlin rules location:
+- Python rules location:
+- TypeScript / JavaScript rules location:
 - SQL rules location:
 - Bash rules location:
 - PowerShell rules location:
