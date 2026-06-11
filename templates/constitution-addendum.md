@@ -132,3 +132,20 @@
 - The CRA applicability decision MUST be recorded in `docs/security/`
   (default: `cra-applicability-template`) or equivalent governance
   documentation, including for `N/A` decisions.
+
+### Regulatory applicability
+
+- Projects SHOULD record a lightweight regulatory applicability decision when
+  release, market placement, customer handover, cloud operation, AI
+  runtime/product components, financial-sector ICT dependencies, or regulated
+  customers/supply chains are in scope.
+- `NIS2`, `CRA`, `EU AI Act`, `DORA`, sector-specific rules, and customer
+  obligations are screened as `Applicable`, `N/A`, or `Open` using
+  `regulatory-applicability-template`.
+- Private training, learning, and reference projects MAY record these
+  regulations as `N/A` when no regulated service, regulated customer,
+  EU-market product, AI runtime/product component, financial-sector ICT
+  dependency, or regulated supply-chain role exists. The rationale must be
+  explicit; silent omission is not allowed.
+- CRA-scoped projects SHOULD link the overview record to the deeper
+  `cra-applicability-template` evidence.

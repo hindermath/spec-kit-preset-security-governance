@@ -23,5 +23,10 @@
   supply-chain evidence with the G7/BSI AI-SBOM clusters.
 - Add a CRA applicability task whenever distribution, EU market reach,
   vulnerability disclosure, or conformity assessment scope is touched.
+- Add a regulatory applicability task for `NIS2`, `CRA`, `EU AI Act`, and
+  `DORA` when release, market placement, customer handover, cloud operation,
+  AI runtime/product components, financial-sector ICT dependencies, or
+  regulated customers/supply chains are in scope. For private training
+  projects, record explicit `N/A` rationale when no regulated scope exists.
 - Add or update entries in `docs/security/` (default location) for each new
   evidence artefact created during the feature.

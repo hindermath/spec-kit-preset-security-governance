@@ -23,7 +23,12 @@
 - Surface required evidence artefacts under `docs/security/`. Default
   templates: `security-checklist`, `secure-coding-language-rules`,
   `dependency-audit`, `asvs-verification`, `supply-chain-evidence`,
-  `msl-applicability`, `cra-applicability`.
+  `msl-applicability`, `cra-applicability`, `regulatory-applicability`.
 - For any change that affects distribution, EU market reach, or
   vulnerability handling, surface the EU Cyber Resilience Act applicability
   question instead of leaving it implicit.
+- For release, market placement, customer handover, cloud operation, AI
+  runtime/product components, financial-sector ICT dependencies, or regulated
+  customers/supply chains, surface regulatory applicability for `NIS2`, `CRA`,
+  `EU AI Act`, and `DORA`. Private training projects may record explicit
+  `N/A` when no regulated scope exists.

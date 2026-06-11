@@ -16,6 +16,10 @@
   - `SLSA` applies as a target model for CI/CD-built or published artefacts.
   - `OpenSSF Scorecard` applies to public OSS repositories or high-impact
     external dependencies.
+- `NIS2`, `CRA`, `EU AI Act`, and `DORA` are screened through regulatory
+  applicability when release, market placement, customer handover, cloud
+  operation, AI runtime/product components, financial-sector ICT dependencies,
+  or regulated customers/supply chains are in scope.
 - Record any justified `N/A` decisions for the standards above.
 - Identify whether this feature needs:
   - `msl-applicability`
@@ -25,6 +29,7 @@
   - `asvs-verification`
   - `supply-chain-evidence`
   - `cra-applicability`
+  - `regulatory-applicability`
 
 ## Security Evidence Expectations
 

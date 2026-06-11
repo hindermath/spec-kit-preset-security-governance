@@ -6,7 +6,8 @@
   `secure-coding-language-rules-template` rather than treating MSL status as
   sufficient by itself.
 - Confirm which security standards apply (`NIST SSDF`, `CWE Top 25`, `OWASP
-  ASVS` Level 1/2/3, `SBOM`, `AI-SBOM`, `VEX`, `SLSA`, `OpenSSF Scorecard`) and who
+  ASVS` Level 1/2/3, `SBOM`, `AI-SBOM`, `VEX`, `SLSA`, `OpenSSF Scorecard`,
+  regulatory applicability for `NIS2`, `CRA`, `EU AI Act`, and `DORA`) and who
   owns the corresponding evidence.
 - Identify input handling, authentication, authorisation, cryptography,
   dependency, and supply-chain risks. Map relevant `CWE Top 25` items to
@@ -26,3 +27,8 @@
 - Plan a CRA applicability check for any feature that affects product
   distribution, EU market reach, vulnerability handling, or conformity
   assessment scope.
+- Plan a regulatory applicability check when release, market placement,
+  customer handover, cloud operation, AI runtime/product components,
+  financial-sector ICT dependencies, or regulated customers/supply chains are
+  in scope. Private training projects default to explicit `N/A` when no
+  regulated scope exists.
