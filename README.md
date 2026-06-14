@@ -1,6 +1,6 @@
 # Security Governance Preset
 
-Version: `0.5.0`
+Version: `0.6.0`
 Requires: `spec-kit >= 0.8.0` (uses the `wrap` and `append` composition
 strategies introduced in 0.8.x).
 
@@ -49,6 +49,8 @@ Preset strategy:
 
 Evidence templates included:
 
+- `standard-applicability-template` (audit-ready standards applicability matrix)
+- Spec-Kit run evidence fields are embedded in the evidence templates to support audit-ready applicability, N/A rationale, reviewer, and follow-up records.
 - `msl-applicability-template`
 - `secure-coding-language-rules-template` (C, C#/.NET, Rust, Go, Swift,
   Java/Kotlin, Python, TypeScript/JavaScript, SQL, Bash, PowerShell,
@@ -121,6 +123,10 @@ MSL notes:
   CRA, EU AI Act, and DORA
 - the addendum surfaces a non-blocking advisory pattern; a runtime warning
   in the Spec Kit CLI itself is tracked separately
+
+Release notes:
+
+- `v0.6.0` adds audit-ready Spec-Kit run evidence fields so generated Markdown documents and checklists can record applicability, N/A rationale, reviewer, evidence path, residual risk, and follow-up per standards-relevant Spec-Kit run.
 
 Recommended standalone install priority:
 

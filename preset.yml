@@ -3,8 +3,8 @@ schema_version: "1.0"
 preset:
   id: "security-governance"
   name: "Security Governance"
-  version: "0.5.0"
-  description: "Adds memory-safe-language preference, language-specific secure coding profiles, ASVS verification, SBOM/AI-SBOM supply-chain transparency, CRA awareness, and regulatory applicability screening for NIS2, CRA, EU AI Act, and DORA to Spec Kit."
+  version: "0.6.0"
+  description: "Adds memory-safe-language preference, language-specific secure coding profiles, audit-ready Spec-Kit run evidence, ASVS verification, SBOM/AI-SBOM supply-chain transparency, CRA awareness, and regulatory applicability screening for NIS2, CRA, EU AI Act, and DORA to Spec Kit."
   author: "Thorsten Hindermann"
   repository: "https://github.com/hindermath/spec-kit-preset-security-governance"
   license: "MIT"
@@ -47,6 +47,11 @@ provides:
       name: "msl-applicability-template"
       file: "templates/msl-applicability-template.md"
       description: "Starter memory-safe language applicability record"
+
+    - type: "template"
+      name: "standard-applicability-template"
+      file: "templates/standard-applicability-template.md"
+      description: "Starter audit-ready standards applicability matrix for Spec-Kit runs"
 
     - type: "template"
       name: "security-checklist-template"

@@ -30,3 +30,10 @@
   projects, record explicit `N/A` rationale when no regulated scope exists.
 - Add or update entries in `docs/security/` (default location) for each new
   evidence artefact created during the feature.
+
+## Audit Evidence Tasks
+
+- Add tasks to create or update the Markdown evidence/checklist documents for this Spec-Kit run.
+- Each task must name the target evidence file, the standard or governance checkpoint, and the expected decision: `Applicable`, `N/A`, or `Open`.
+- Add tasks to fill evidence rows with reviewer, date, evidence path, residual risk, and follow-up where relevant.
+- Add tasks to verify that no relevant checkpoint was silently omitted.

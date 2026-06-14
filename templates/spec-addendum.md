@@ -45,3 +45,10 @@
 - When secrets, cryptographic primitives, authentication, or authorisation
   flows change, record the affected `CWE Top 25` weaknesses and chosen
   mitigations.
+
+## Audit Evidence Applicability
+
+- Record whether this Spec-Kit run requires an evidence document or checklist update.
+- Use `Applicable`, `N/A`, or `Open` for each relevant standard or governance checkpoint.
+- Document every `N/A` decision with a short rationale and re-evaluation trigger.
+- Link the planned evidence path from the feature spec; silent omission is not allowed.
