@@ -22,11 +22,11 @@ depth belongs to the `architecture-governance` preset.*
 
 Das Qualitätsziel ist überprüfbare Security-Governance pro Spec-Kit-Lauf:
 akzeptierte Anforderungen, nachvollziehbare Anwendbarkeit, konkrete
-Sprachregeln, dokumentierte N/A-Entscheidungen und auditierbare Evidence.
+Sprachregeln, dokumentierte `N/A`-Entscheidungen und auditierbare Evidence.
 
 *The quality goal is reviewable security governance per Spec-Kit run: accepted
-requirements, traceable applicability, concrete language rules, documented N/A
-decisions, and auditable evidence.*
+requirements, traceable applicability, concrete language rules, documented
+`N/A` decisions, and auditable evidence.*
 
 ## Zielgruppen / Audience
 
@@ -54,8 +54,8 @@ security decisions in a traceable, CEFR-B2-friendly way.*
   Java/Kotlin, Python, TypeScript/JavaScript, SQL, Bash und PowerShell
 - Evidence-Vorlagen für Standards, MSL, Secure Coding, Checklisten,
   Dependency Audit, ASVS, Supply Chain, CRA und Regulatorik
-- auditfähige Spec-Kit-Run-Evidence-Felder für Anwendbarkeit, N/A-Begründung,
-  Reviewer, Evidence-Pfad, Restrisiko und Follow-up
+- auditfähige Spec-Kit-Run-Evidence-Felder für Anwendbarkeit,
+  `N/A`-Begründung, Reviewer, Evidence-Pfad, Restrisiko und Follow-up
 
 *The preset provides addenda for the main Spec-Kit artifacts and agent
 guidance, wraps the normal Specify/Plan/Tasks flow, supplies
@@ -80,13 +80,13 @@ bypass, deployment, secret, or provider-administration authority.*
 
 Vor der Installation sollten vorhanden sein:
 
-1. eine kompatible GitHub Spec Kit CLI;
+1. eine kompatible GitHub Spec-Kit CLI;
 2. eine gültige Spec-Kit-Integration im Ziel-Repository;
 3. versionierte Constitution und Agent-Guidance;
 4. ein geklärter Ort für Security-Evidence, standardmäßig `docs/security/`;
 5. ein Projektverständnis für Runtime, Release-Form und regulatorische Rolle.
 
-*Before installation, use a compatible GitHub Spec Kit CLI, a valid Spec-Kit
+*Before installation, use a compatible GitHub Spec-Kit CLI, a valid Spec-Kit
 integration, versioned constitution and agent guidance, a clear evidence
 location, and a basic understanding of runtime, release shape, and regulatory
 role.*
@@ -235,12 +235,12 @@ SDLC-Ebene hinausgehen.
 ## Version 0.6.0 / Version 0.6.0
 
 `v0.6.0` ergänzt auditfähige Spec-Kit-Run-Evidence-Felder, damit generierte
-Markdown-Dokumente und Checklisten Anwendbarkeit, N/A-Begründung, Reviewer,
+Markdown-Dokumente und Checklisten Anwendbarkeit, `N/A`-Begründung, Reviewer,
 Evidence-Pfad, Restrisiko und Follow-up pro standardsrelevantem Spec-Kit-Lauf
 aufzeichnen können.
 
 *`v0.6.0` adds audit-ready Spec-Kit run evidence fields so generated Markdown
-documents and checklists can record applicability, N/A rationale, reviewer,
+documents and checklists can record applicability, `N/A` rationale, reviewer,
 evidence path, residual risk, and follow-up per standards-relevant Spec-Kit
 run.*
 
