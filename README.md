@@ -131,7 +131,7 @@ When not to use:
   not run SAST, dependency audits, SBOM tooling, regulatory assessments, or
   remote checks by itself.
 - Applicability decisions for standards and regulation require explicit
-  project evidence, especially when declared N/A.
+  project evidence, especially when declared `N/A`.
 - The preset does not grant repository, remote, merge, deployment, secret, or
   provider-administration authority.
 
@@ -152,4 +152,7 @@ MSL notes:
 
 Release notes:
 
-- `v0.6.0` adds audit-ready Spec-Kit run evidence fields so generated Markdown documents and checklists can record applicability, N/A rationale, reviewer, evidence path, residual risk, and follow-up per standards-relevant Spec-Kit run.
+- `v0.6.0` adds audit-ready Spec-Kit run evidence fields so generated Markdown
+  documents and checklists can record applicability, N/A rationale, reviewer,
+  evidence path, residual risk, and follow-up per standards-relevant Spec-Kit
+  run.
