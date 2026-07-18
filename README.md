@@ -1,10 +1,12 @@
 # Security Governance Preset
 
 Version: `0.6.0`
-Requires: `spec-kit >= 0.8.0` (uses the `wrap` and `append` composition
-strategies introduced in 0.8.x).
+Status: published, standard governance preset
+Priority: `10`
+Requires: Spec Kit `>=0.8.0` (uses the `wrap` and `append` composition
+strategies introduced in 0.8.x)
 
-Purpose:
+## Purpose / Zweck
 
 - inject secure-development governance into Spec Kit workflows
 - cover code-level controls, language-specific secure-coding profiles, SDLC
@@ -12,6 +14,20 @@ Purpose:
   regulatory applicability screening for NIS2, CRA, EU AI Act, and DORA
 - stay focused on code and process; architectural depth lives in the
   `architecture-governance` preset
+
+## Install
+
+```bash
+specify preset add \
+  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.0.zip \
+  --priority 10
+specify preset info security-governance
+```
+
+```bash
+specify preset add --dev /path/to/security-governance --priority 10
+specify preset info security-governance
+```
 
 Primary source chapters from `home-baseline` constitution:
 
@@ -108,6 +124,16 @@ When not to use:
 - projects that want only architecture governance without SDLC-level
   security (use `architecture-governance` instead or in combination)
 - teams not ready to maintain security evidence artefacts at all
+
+## Safety / Grenzen
+
+- Installation adds secure-development prompts and evidence templates; it does
+  not run SAST, dependency audits, SBOM tooling, regulatory assessments, or
+  remote checks by itself.
+- Applicability decisions for standards and regulation require explicit
+  project evidence, especially when declared N/A.
+- The preset does not grant repository, remote, merge, deployment, secret, or
+  provider-administration authority.
 
 MSL notes:
 
