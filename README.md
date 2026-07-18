@@ -3,12 +3,12 @@
 Version: `0.6.0`
 Status: published, standard governance preset
 Priority: `10`
-Requires: Spec Kit `>=0.8.0` (uses the `wrap` and `append` composition
-strategies introduced in 0.8.x)
+Requires: Spec-Kit `>=0.8.0` (uses the `wrap` and `append` composition
+strategies introduced in 0.8.x).
 
 ## Purpose / Zweck
 
-- inject secure-development governance into Spec Kit workflows
+- inject secure-development governance into Spec-Kit workflows
 - cover code-level controls, language-specific secure-coding profiles, SDLC
   controls, SBOM/AI-SBOM supply-chain transparency, CRA awareness, and
   regulatory applicability screening for NIS2, CRA, EU AI Act, and DORA
@@ -148,12 +148,8 @@ MSL notes:
 - `v0.5.0` adds the lightweight regulatory applicability screen for NIS2,
   CRA, EU AI Act, and DORA
 - the addendum surfaces a non-blocking advisory pattern; a runtime warning
-  in the Spec Kit CLI itself is tracked separately
+  in the Spec-Kit CLI itself is tracked separately
 
 Release notes:
 
 - `v0.6.0` adds audit-ready Spec-Kit run evidence fields so generated Markdown documents and checklists can record applicability, N/A rationale, reviewer, evidence path, residual risk, and follow-up per standards-relevant Spec-Kit run.
-
-Recommended standalone install priority:
-
-- `10`
