@@ -1,6 +1,6 @@
 # Security Governance Preset
 
-Version: `0.6.0`
+Version: `0.6.1`
 Status: published, standard governance preset
 Priority: `10`
 Requires: Spec-Kit `>=0.8.0` (uses the `wrap` and `append` composition
@@ -97,7 +97,7 @@ role.*
 
 ```bash
 specify preset add \
-  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.0.zip \
+  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.1.zip \
   --priority 10
 specify preset info security-governance
 ```
@@ -231,6 +231,16 @@ leeres `N/A` ist keine prüffähige Entscheidung.
 Nutze `architecture-governance` zusätzlich, wenn Trust Boundaries,
 Threat-Modeling, Zero Trust, S-ADRs oder Cloud-Assurance über die Code- und
 SDLC-Ebene hinausgehen.
+
+## Version 0.6.1 / Version 0.6.1
+
+`v0.6.1` trennt technische Security-Gates von Null-Schritt-Provider- oder
+Billing-Ablehnungen, begrenzt `N/A`-Ausnahmen und stellt klar, dass ein
+Admin-Bypass weder Exact-Head-Evidence noch Sicherheitsprüfung ersetzt.
+
+*`v0.6.1` separates technical security gates from zero-step provider or
+billing refusals, bounds `N/A` exceptions, and clarifies that administrator
+bypass replaces neither exact-head evidence nor security validation.*
 
 ## Version 0.6.0 / Version 0.6.0
 
