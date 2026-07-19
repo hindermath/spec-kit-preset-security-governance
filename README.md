@@ -236,7 +236,7 @@ SDLC-Ebene hinausgehen.
 
 `v0.6.1` trennt technische Security-Gates von Null-Schritt-Provider- oder
 Billing-Ablehnungen, begrenzt `N/A`-Ausnahmen und stellt klar, dass ein
-Admin-Bypass weder Exact-Head-Evidence noch Sicherheitspruefung ersetzt.
+Admin-Bypass weder Exact-Head-Evidence noch Sicherheitsprüfung ersetzt.
 
 *`v0.6.1` separates technical security gates from zero-step provider or
 billing refusals, bounds `N/A` exceptions, and clarifies that administrator
