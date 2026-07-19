@@ -32,6 +32,14 @@
   customers/supply chains, surface regulatory applicability for `NIS2`, `CRA`,
   `EU AI Act`, and `DORA`. Private training projects may record explicit
   `N/A` when no regulated scope exists.
+- Classify provider or billing rejection separately from a technical security
+  gate. A zero-step provider refusal is not a passing test and may be `N/A`
+  only under an explicit, narrow, time-bounded exception with compensating
+  evidence.
+- A repository-policy or administrator bypass never replaces security
+  validation, exact-head evidence, or review evidence.
+- Keep runner, status, and model provenance free of credentials, tokens,
+  personal identifiers, and inferred secret configuration.
 
 ## Audit-Ready Spec-Kit Evidence
 
