@@ -1,6 +1,6 @@
 # Security Governance Preset
 
-Version: `0.6.1`
+Version: `0.6.2`
 Status: published, standard governance preset
 Priority: `10`
 Requires: Spec-Kit `>=0.8.0` (uses the `wrap` and `append` composition
@@ -97,7 +97,7 @@ role.*
 
 ```bash
 specify preset add \
-  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.1.zip \
+  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.2.zip \
   --priority 10
 specify preset info security-governance
 ```
@@ -231,6 +231,15 @@ leeres `N/A` ist keine prüffähige Entscheidung.
 Nutze `architecture-governance` zusätzlich, wenn Trust Boundaries,
 Threat-Modeling, Zero Trust, S-ADRs oder Cloud-Assurance über die Code- und
 SDLC-Ebene hinausgehen.
+
+## Version 0.6.2 / Version 0.6.2
+
+`v0.6.2` veröffentlicht den agentenneutralen `model-routing.json`-Vertrag für
+die Komposition mit Model Routing Governance; Sicherheitsregeln bleiben
+unverändert.
+
+*`v0.6.2` publishes the agent-neutral `model-routing.json` contract for
+composition with Model Routing Governance; security rules are unchanged.*
 
 ## Version 0.6.1 / Version 0.6.1
 

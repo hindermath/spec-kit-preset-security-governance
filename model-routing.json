@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "presetId": "security-governance",
+  "fallbackPolicy": "fail-closed",
+  "defaultRole": "frontier-reasoning",
+  "commands": {
+    "speckit.specify": "frontier-reasoning",
+    "speckit.plan": "frontier-reasoning",
+    "speckit.tasks": "frontier-reasoning"
+  }
+}
