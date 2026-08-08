@@ -3,7 +3,7 @@ schema_version: "1.0"
 preset:
   id: "security-governance"
   name: "Security Governance"
-  version: "0.6.1"
+  version: "0.6.2"
   description: "Adds memory-safe-language preference, language-specific secure coding profiles, audit-ready exact-head and security-gate evidence with provider-failure classification, ASVS verification, SBOM/AI-SBOM supply-chain transparency, CRA awareness, and regulatory applicability screening for NIS2, CRA, EU AI Act, and DORA to Spec Kit."
   author: "Thorsten Hindermann"
   repository: "https://github.com/hindermath/spec-kit-preset-security-governance"
@@ -14,6 +14,11 @@ requires:
 
 provides:
   templates:
+    - type: "template"
+      name: "security-governance-model-routing"
+      file: "model-routing.json"
+      description: "Agent-neutral command-to-role routing contract"
+
     - type: "template"
       name: "constitution-template"
       file: "templates/constitution-addendum.md"
