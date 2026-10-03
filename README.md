@@ -1,7 +1,7 @@
 # Security Governance Preset
 
 Version: `0.7.0`
-Status: release candidate; publication pending professional review and CI
+Status: stable release; professional review and native CI completed
 Priority: `10`
 Requires: Spec-Kit `>=0.8.0` (uses the `wrap` and `append` composition
 strategies introduced in `0.8.x`).
@@ -95,15 +95,14 @@ role.*
 
 ### Veröffentlichter Tag / Published Tag
 
-Das folgende Beispiel verwendet den bisherigen veroeffentlichten Stand v0.6.2.
-Der v0.7.0-Kandidat wird bis zur verifizierten Veroeffentlichung ueber den
-Entwicklungs-Checkout geprueft.
-*This example uses published v0.6.2. Validate the v0.7.0 candidate using the
-development checkout until its release has been verified.*
+Der Tag v0.7.0 ist stabil veroeffentlicht. Tag und Paketinhalt bleiben
+unveraendert; Release- und Integrationsnachweise sind getrennt.
+*Tag v0.7.0 is published as a stable release. Its tag and package payload are
+immutable; release and consumer integration evidence remain separate.*
 
 ```bash
 specify preset add \
-  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.2.zip \
+  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.7.0.zip \
   --priority 10
 specify preset info security-governance
 ```
