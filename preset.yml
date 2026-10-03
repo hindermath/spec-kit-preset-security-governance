@@ -3,8 +3,8 @@ schema_version: "1.0"
 preset:
   id: "security-governance"
   name: "Security Governance"
-  version: "0.6.2"
-  description: "Adds memory-safe-language preference, language-specific secure coding profiles, audit-ready exact-head and security-gate evidence with provider-failure classification, ASVS verification, SBOM/AI-SBOM supply-chain transparency, CRA awareness, and regulatory applicability screening for NIS2, CRA, EU AI Act, and DORA to Spec Kit."
+  version: "0.7.0"
+  description: "Adds memory-safe-language preference, language-specific secure coding profiles, audit-ready exact-head and security-gate evidence with provider-failure classification, ASVS verification, SBOM/AI-SBOM supply-chain transparency, CRA awareness, and regulatory applicability screening for GDPR, NIS2, CRA, EU AI Act, and DORA to Spec Kit."
   author: "Thorsten Hindermann"
   repository: "https://github.com/hindermath/spec-kit-preset-security-governance"
   license: "MIT"
@@ -92,6 +92,26 @@ provides:
       name: "regulatory-applicability-template"
       file: "templates/regulatory-applicability-template.md"
       description: "Starter NIS2, CRA, EU AI Act, and DORA applicability screening record"
+
+    - type: "template"
+      name: "gdpr-applicability-template"
+      file: "templates/gdpr-applicability-template.md"
+      description: "Role-bound gdpr applicability and evidence starter"
+
+    - type: "template"
+      name: "ai-act-applicability-template"
+      file: "templates/ai-act-applicability-template.md"
+      description: "Role-bound ai-act applicability and evidence starter"
+
+    - type: "template"
+      name: "nis2-applicability-template"
+      file: "templates/nis2-applicability-template.md"
+      description: "Role-bound nis2 applicability and evidence starter"
+
+    - type: "template"
+      name: "dora-applicability-template"
+      file: "templates/dora-applicability-template.md"
+      description: "Role-bound dora applicability and evidence starter"
 
     - type: "command"
       name: "speckit.specify"
