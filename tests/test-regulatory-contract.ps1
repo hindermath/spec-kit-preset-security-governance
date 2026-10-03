@@ -45,7 +45,7 @@ if ($registered.Count -ne 22) { throw "Expected 22 provided entries, got $($regi
 foreach ($entry in $registered) {
     if (-not (Test-Path -LiteralPath (Join-Path $PackageRoot $entry.Groups[1].Value) -PathType Leaf)) { throw 'Missing registered file' }
 }
-foreach ($id in @('gdpr','ai-act','nis2','dora')) {
+foreach ($id in @('gdpr','ai-act','cra','nis2','dora')) {
     Assert-RegulatoryText $manifest ('name: "' + $id + '-applicability-template"') 'registration'
     $content = [IO.File]::ReadAllText((Join-Path $PackageRoot ("templates/{0}-applicability-template.md" -f $id)))
     foreach ($field in @('Decision: [Applicable / N/A / Open]','Country / jurisdiction:','Direct legal duties:',
@@ -72,7 +72,7 @@ foreach ($term in @('class I/II','Article 32','14 days after','one month after i
     Assert-RegulatoryText $cra $term 'CRA'
 }
 $nis = [IO.File]::ReadAllText((Join-Path $PackageRoot 'templates/nis2-applicability-template.md'))
-foreach ($term in @('national transposition','trust-service special rule','2024/2690','A repository is not a legal entity')) {
+foreach ($term in @('national transposition','trust-service special rule','within 24 hours for significant incidents affecting trust services','2024/2690','A repository is not a legal entity')) {
     Assert-RegulatoryText $nis $term 'NIS2'
 }
 $dora = [IO.File]::ReadAllText((Join-Path $PackageRoot 'templates/dora-applicability-template.md'))

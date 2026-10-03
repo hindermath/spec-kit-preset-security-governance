@@ -95,9 +95,15 @@ role.*
 
 ### Veröffentlichter Tag / Published Tag
 
+Das folgende Beispiel verwendet den bisherigen veroeffentlichten Stand v0.6.2.
+Der v0.7.0-Kandidat wird bis zur verifizierten Veroeffentlichung ueber den
+Entwicklungs-Checkout geprueft.
+*This example uses published v0.6.2. Validate the v0.7.0 candidate using the
+development checkout until its release has been verified.*
+
 ```bash
 specify preset add \
-  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.7.0.zip \
+  --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.2.zip \
   --priority 10
 specify preset info security-governance
 ```

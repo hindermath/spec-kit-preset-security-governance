@@ -54,7 +54,7 @@ evidence rather than publishing personal data, secrets or incident payloads.
 | --- | --- | --- |
 | Significance and awareness | significant incident; documented awareness time | |
 | Early warning | without undue delay, within 24 hours of awareness | |
-| Incident notification | within 72 hours of awareness; trust-service special rule must be checked | |
+| Incident notification | without undue delay, within 72 hours of awareness; trust-service special rule: within 24 hours for significant incidents affecting trust services (Art. 23(4), second subparagraph) | |
 | Final / ongoing incident report | one month after notification; progress/final rule for ongoing incidents | |
 
 DE: EU-Beispiel gegen die konkrete nationale Umsetzung und Sonderregeln

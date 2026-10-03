@@ -1,5 +1,30 @@
 # EU Cyber Resilience Act (CRA) Applicability
 
+## Gemeinsamer Nachweis / Shared evidence
+
+DE: Beispielprogramm, Entwicklungswerkzeuge und Organisation getrennt pruefen.
+Unbekannte Rollen oder Rechtsfassungen bleiben Open; Ausbildung allein ist
+keine allgemeine Ausnahme. Kontrollierte Evidence statt personenbezogener
+Rohdaten oder Secrets referenzieren. Tests erteilen keine Rechtsfreigabe.
+EN: Assess product, tooling and organisation separately. Unknown roles or legal
+versions remain Open; education is not a blanket exemption. Reference controlled
+evidence, not personal payloads or secrets. Tests do not grant legal approval.
+
+- Feature / system / Spec-Kit phase:
+- Branch / commit / PR:
+- Scope: [sample product / development tooling / operating organisation]
+- Country / jurisdiction:
+- Role and responsible legal entity:
+- Decision: [Applicable / N/A / Open]
+- Direct legal duties:
+- Contractual / customer-derived duties:
+- Owner / reviewer:
+- Reviewed at / review due:
+- Official source / version / article / checked at / application date:
+- Evidence path / residual risk:
+- N/A rationale / reevaluation trigger:
+- Open finding / next action / owner / due date:
+
 ## Spec-Kit Run Evidence
 
 - Feature / Spec ID:
