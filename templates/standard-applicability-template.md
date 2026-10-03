@@ -25,6 +25,7 @@
 | VEX | [Applicable / N/A / Open] | Known vulnerability in shipped or evaluated component | Affected/not affected/mitigated/under investigation statement | | [OK / Open / N/A] | |
 | SLSA | [Applicable / N/A / Open] | CI/CD-built or published artefact | Provenance, attestation, build integrity notes | | [OK / Open / N/A] | |
 | OpenSSF Scorecard | [Applicable / N/A / Open] | Public OSS or high-impact external dependency | Scorecard output and reviewed findings | | [OK / Open / N/A] | |
+| GDPR | [Applicable / N/A / Open] | Personal data in product, tooling or organisation | Role, processing, legal basis, safeguards and DPIA threshold evidence | | [OK / Open / N/A] | |
 | CRA | [Applicable / N/A / Open] | EU-market product with digital elements, vulnerability handling, conformity scope | Applicability decision, technical documentation, SBOM/vulnerability evidence | | [OK / Open / N/A] | |
 | NIS2 | [Applicable / N/A / Open] | Essential/important entity, regulated customer/supply chain, sector obligation | Risk-management, incident, supply-chain and governance evidence | | [OK / Open / N/A] | |
 | EU AI Act | [Applicable / N/A / Open] | AI runtime/product component or regulated AI system | AI classification, documentation/logging, AI-SBOM cross-reference | | [OK / Open / N/A] | |

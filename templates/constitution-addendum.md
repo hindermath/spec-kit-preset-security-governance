@@ -116,8 +116,8 @@
   2024/2847).
 - CRA-scoped projects MUST record:
   - the applicability decision and conformity assessment approach
-    (self-assessment for most products; third-party for critical or important
-    products under CRA Annex III/IV),
+    (normal products, Annex III class I/II and Annex IV require distinct
+    routes under Article 32; class I is not always third-party assessment),
   - SBOM availability per released version,
   - a documented vulnerability disclosure and handling process with the
     24-hour reporting expectation for actively exploited vulnerabilities,
@@ -142,10 +142,33 @@
 - `NIS2`, `CRA`, `EU AI Act`, `DORA`, sector-specific rules, and customer
   obligations are screened as `Applicable`, `N/A`, or `Open` using
   `regulatory-applicability-template`.
-- Private training, learning, and reference projects MAY record these
-  regulations as `N/A` when no regulated service, regulated customer,
-  EU-market product, AI runtime/product component, financial-sector ICT
-  dependency, or regulated supply-chain role exists. The rationale must be
-  explicit; silent omission is not allowed.
+- Training/reference projects require a separate, justified applicability
+  decision for the product, development tooling and operating organisation.
+  Education alone is not a legal exemption; silent omission is not allowed.
 - CRA-scoped projects SHOULD link the overview record to the deeper
   `cra-applicability-template` evidence.
+
+## Regulatorischer Evidence-Vertrag / Regulatory evidence contract
+
+DE: DS-GVO, KI-VO, CRA, NIS2 und DORA getrennt fuer Beispielprogramm,
+Entwicklungswerkzeuge und nutzende Organisation pruefen. Rechtliche Rollen,
+Land, datierte Rechtsquelle und Anwendungszeitpunkt nennen; direkte Pflichten
+von vertraglichen Kunden-/Lieferkettenanforderungen trennen. Unbekannt bleibt
+Open mit Owner, Aktion und Frist. N/A braucht Begruendung und Trigger.
+AI-SBOM: N/A entscheidet nicht ueber DS-GVO oder KI-VO. Ausbildung ist keine
+allgemeine Ausnahme. Security fuehrt die Anwendbarkeit; Architecture
+referenziert diese Entscheidung fuer Datenfluesse, Schutz und Resilienz.
+Technische Pruefung ist keine Rechtsfreigabe. Historische Evidence erhalten.
+EN: Assess GDPR, AI Act, CRA, NIS2 and DORA separately for the sample product,
+development tooling and operating organisation. Record roles, jurisdiction,
+dated legal source and application date; separate direct and contractual
+duties. Unknown remains Open with owner, action and due date; N/A needs
+rationale and trigger. AI-SBOM: N/A does not decide GDPR/AI Act applicability.
+Education is not a blanket exemption. Security owns applicability;
+Architecture links decisions to data flows, safeguards and resilience.
+Technical validation grants no legal approval; preserve historical evidence.
+
+Use regulatory-applicability-template as the index and link
+gdpr-applicability-template, ai-act-applicability-template,
+cra-applicability-template, nis2-applicability-template and
+dora-applicability-template where relevant. An unfilled record is not evidence.

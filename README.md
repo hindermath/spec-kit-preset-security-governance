@@ -1,7 +1,7 @@
 # Security Governance Preset
 
-Version: `0.6.2`
-Status: published, standard governance preset
+Version: `0.7.0`
+Status: release candidate; publication pending professional review and CI
 Priority: `10`
 Requires: Spec-Kit `>=0.8.0` (uses the `wrap` and `append` composition
 strategies introduced in `0.8.x`).
@@ -95,6 +95,12 @@ role.*
 
 ### Veröffentlichter Tag / Published Tag
 
+Das folgende Beispiel verwendet den bisherigen veroeffentlichten Stand v0.6.2.
+Der v0.7.0-Kandidat wird bis zur verifizierten Veroeffentlichung ueber den
+Entwicklungs-Checkout geprueft.
+*This example uses published v0.6.2. Validate the v0.7.0 candidate using the
+development checkout until its release has been verified.*
+
 ```bash
 specify preset add \
   --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.6.2.zip \
@@ -147,6 +153,7 @@ without weakening the security baseline.*
 - `OpenSSF Scorecard`
 - `EU CRA` (Regulation (EU) 2024/2847)
 - `NIS2`, `EU AI Act`, and `DORA` as applicability screening topics
+- `GDPR` / DS-GVO with independent privacy and DPIA-threshold evidence
 
 MSL-Best-Practices entstehen aus zwei Regeln: `XI` steuert die Sprachwahl,
 `XII` steuert die sichere Nutzung der gewählten Sprache. Eine MSL ist deshalb
@@ -179,6 +186,10 @@ dependency review.*
 - `supply-chain-evidence-template`
 - `cra-applicability-template`
 - `regulatory-applicability-template`
+- `gdpr-applicability-template`
+- `ai-act-applicability-template`
+- `nis2-applicability-template`
+- `dora-applicability-template`
 
 Default evidence location: `docs/security/`. MSL justification may live in the
 feature spec, local constitution, or another governance document, but should
@@ -186,18 +197,16 @@ be referenced from planning artifacts.
 
 ## AI-SBOM und Regulatorik / AI-SBOM and Regulation
 
-- AI used only as development tooling is documented as `N/A` with a short
-  toolchain rationale.
+- AI-SBOM for the released product may be `N/A` when AI is only development
+  tooling; GDPR and AI Act tool-operation screening remain independent.
 - AI models, AI services, training or embedding datasets, inference
   infrastructure, or AI runtime components in the released or operated system
   trigger AI-SBOM evidence.
 - NIS2, CRA, EU AI Act, DORA, sector-specific rules, and customer or
   supply-chain obligations are screened through
   `regulatory-applicability-template`.
-- Private training, learning, and reference projects default to `N/A` when no
-  regulated service, regulated customer, EU-market product, AI runtime or
-  product component, financial-sector ICT dependency, or regulated
-  supply-chain role exists.
+- Training/reference projects require separately justified decisions for
+  product, development tooling and operating organisation; no blanket N/A.
 
 ## Prüfung / Verification
 
@@ -275,3 +284,35 @@ run.*
 ## License
 
 MIT. See `LICENSE`.
+
+## Regulatorischer Evidence-Vertrag / Regulatory evidence contract
+
+DE: DS-GVO, KI-VO, CRA, NIS2 und DORA getrennt fuer Beispielprogramm,
+Entwicklungswerkzeuge und nutzende Organisation pruefen. Rechtliche Rollen,
+Land, datierte Rechtsquelle und Anwendungszeitpunkt nennen; direkte Pflichten
+von vertraglichen Kunden-/Lieferkettenanforderungen trennen. Unbekannt bleibt
+Open mit Owner, Aktion und Frist. N/A braucht Begruendung und Trigger.
+AI-SBOM: N/A entscheidet nicht ueber DS-GVO oder KI-VO. Ausbildung ist keine
+allgemeine Ausnahme. Security fuehrt die Anwendbarkeit; Architecture
+referenziert diese Entscheidung fuer Datenfluesse, Schutz und Resilienz.
+Technische Pruefung ist keine Rechtsfreigabe. Historische Evidence erhalten.
+EN: Assess GDPR, AI Act, CRA, NIS2 and DORA separately for the sample product,
+development tooling and operating organisation. Record roles, jurisdiction,
+dated legal source and application date; separate direct and contractual
+duties. Unknown remains Open with owner, action and due date; N/A needs
+rationale and trigger. AI-SBOM: N/A does not decide GDPR/AI Act applicability.
+Education is not a blanket exemption. Security owns applicability;
+Architecture links decisions to data flows, safeguards and resilience.
+Technical validation grants no legal approval; preserve historical evidence.
+
+Use regulatory-applicability-template as the index and link
+gdpr-applicability-template, ai-act-applicability-template,
+cra-applicability-template, nis2-applicability-template and
+dora-applicability-template where relevant. An unfilled record is not evidence.
+
+DE: v0.7.0 liefert vier neue portable Vorlagen fuer Datenschutz, KI-VO,
+NIS2 und DORA und praezisiert CRA. Bestehende Schnittstellen bleiben erhalten.
+EN: v0.7.0 adds four portable records and precise CRA screening without
+changing existing commands or granting compliance approval.
+
+[Quellen, Grenzen und Tests / Sources, boundaries and tests](docs/regulatory-evidence-contract.md).

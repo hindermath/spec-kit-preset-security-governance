@@ -8,7 +8,7 @@
 - Run date:
 - Evidence owner:
 - Reviewer:
-- Standards / criteria checked: ISO 27001/27002 secure development controls, NIST SSDF, CWE Top 25, OWASP ASVS, SBOM, AI-SBOM, VEX, SLSA, OpenSSF Scorecard, CRA, NIS2, EU AI Act, DORA
+- Standards / criteria checked: ISO 27001/27002 secure development controls, NIST SSDF, CWE Top 25, OWASP ASVS, SBOM, AI-SBOM, VEX, SLSA, OpenSSF Scorecard, GDPR, CRA, NIS2, EU AI Act, DORA
 - Decision: [Applicable / N/A / Open]
 - Evidence path:
 - N/A rationale, if not applicable:
