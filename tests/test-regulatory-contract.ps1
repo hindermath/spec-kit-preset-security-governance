@@ -39,7 +39,27 @@ function Assert-RegulatoryExample {
     # Fixture structure only: applicability decisions are reviewed inputs, never inferred.
 }
 $manifest = [IO.File]::ReadAllText((Join-Path $PackageRoot 'preset.yml'))
-Assert-RegulatoryText $manifest 'version: "0.7.0"' 'manifest'
+Assert-RegulatoryText $manifest 'version: "0.7.1"' 'manifest'
+# DE: Der Community-Validator braucht eine direkt auswertbare Release-Zeile.
+# EN: The community verifier needs a directly parseable release command.
+$version = [regex]::Match($manifest, '(?m)^\s+version:\s*"([^"\s]+)"').Groups[1].Value
+$description = [regex]::Match($manifest, '(?m)^\s+description:\s*"([^"]+)"').Groups[1].Value
+if ($description.Length -ge 200) { throw 'Catalog description must be under 200 characters' }
+$archive = "https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v${version}.zip"
+$command = "specify preset add --from ${archive} --priority 10"
+$pattern = '(?m)^' + [regex]::Escape($command) + '\r?$'
+$readme = [IO.File]::ReadAllText((Join-Path $PackageRoot 'README.md'))
+if (-not [regex]::IsMatch($readme, $pattern)) { throw 'Missing exact one-line release installation command' }
+foreach ($ending in @("`n", "`r`n")) {
+    if (-not [regex]::IsMatch("${command}${ending}", $pattern)) { throw 'Valid LF/CRLF command rejected' }
+}
+foreach ($invalid in @(
+    "specify preset add \`n  --from ${archive} --priority 10",
+    $command.Replace("v${version}.zip", 'v0.6.2.zip'),
+    $command.Replace('--priority 10', '--priority 20')
+)) {
+    if ([regex]::IsMatch($invalid, $pattern)) { throw 'Invalid installation command accepted' }
+}
 $registered = [regex]::Matches($manifest, '(?m)^\s+file: "([^"]+)"')
 if ($registered.Count -ne 22) { throw "Expected 22 provided entries, got $($registered.Count)" }
 foreach ($entry in $registered) {
