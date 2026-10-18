@@ -39,7 +39,7 @@ function Assert-RegulatoryExample {
     # Fixture structure only: applicability decisions are reviewed inputs, never inferred.
 }
 $manifest = [IO.File]::ReadAllText((Join-Path $PackageRoot 'preset.yml'))
-Assert-RegulatoryText $manifest 'version: "0.7.1"' 'manifest'
+Assert-RegulatoryText $manifest 'version: "0.7.2"' 'manifest'
 # DE: Der Community-Validator braucht eine direkt auswertbare Release-Zeile.
 # EN: The community verifier needs a directly parseable release command.
 $version = [regex]::Match($manifest, '(?m)^\s+version:\s*"([^"\s]+)"').Groups[1].Value
