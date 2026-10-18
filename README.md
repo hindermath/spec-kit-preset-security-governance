@@ -8,6 +8,72 @@ strategies introduced in `0.8.x`).
 
 ## Zweck / Purpose
 
+### Einstieg und Arbeitsweise / Getting Started and Workflow
+
+Beginne im initialisierten Ziel-Repository mit Installation und Prüfung.
+Danach beschreibe das Feature und seine Risiken. Das [Manifest](preset.yml)
+bindet Architektur-unabhängige Security-Anweisungen über `wrap` an
+Specify/Plan/Tasks und über `append` an deren Dokumentvorlagen und Constitution.
+Dies ergänzt Anweisungen, führt aber keine Scanner oder Reviews aus.
+Eigenständige Evidence-Starter und das Agent-Guidance-Addendum werden nur
+bereitgestellt; ihre Registrierung belegt weder Verwendung noch ausgefüllte
+Nachweise. Nenne Starter und konkrete Zielpfade ausdrücklich.
+
+*Start in an initialized target repository with installation and verification,
+then describe the feature and risks. The [manifest](preset.yml) wraps
+Specify/Plan/Tasks and appends security guidance to their document templates
+and the constitution. This integrates instructions, not scanner or review
+execution. Standalone evidence starters and the agent-guidance addendum are
+available separately; registration proves neither use nor completed evidence.
+Explicitly name relevant starters and output paths.*
+
+Beispiel: Für eine neue HTTP-API verwende `standard-applicability-template`
+als Einstieg, `asvs-verification-template` für den vereinbarten Prüf-Scope
+und `security-checklist-template` für sprachbezogene Prüfungen. Plane
+`docs/security/asvs-verification.md` und konkrete Test-/Review-Tasks.
+Regulatorische Fragen werden getrennt im
+`regulatory-applicability-template` erfasst, nicht aus einem ASVS-Ergebnis
+abgeleitet. Das ist ein Ablaufvorschlag, kein bestandenes Assessment.
+
+*Example: for a new HTTP API, start with `standard-applicability-template`,
+use `asvs-verification-template` for the agreed verification scope and
+`security-checklist-template` for language-specific review. Plan
+`docs/security/asvs-verification.md` and concrete test/review tasks. Record
+regulatory questions separately through `regulatory-applicability-template`;
+an ASVS result does not decide them. This is a workflow example, not a pass.*
+
+Specify nennt Scope und Anwendbarkeit; Plan benennt Nachweise und Prüfungen;
+Tasks benennt verbleibende Arbeit und konkrete Evidence-Dateien. Erst die
+beauftragte Umsetzung und Prüfung erzeugt belastbare Ergebnisse. Bestehende
+Evidence sichten und gezielt aktualisieren. `Applicable` bedeutet nicht
+„bestanden“; `N/A` braucht Begründung, `Open` Owner und Folgeaktion.
+
+*Specify records scope/applicability, Plan names evidence/verification, and
+Tasks identifies remaining work and evidence files. Authorized execution and
+review produce actual results. Inspect and update existing evidence rather
+than duplicating it. Applicable is not passed; justify N/A and assign an owner
+and follow-up to Open.*
+
+Priorität ist Auflösungsrang, keine Ausführungsreihenfolge: kleinere Zahl
+bedeutet höhere Priorität. `append` ergänzt, `wrap` verschachtelt und
+`replace` kann gleichnamige Beiträge verdrängen; Projekt-Overrides können
+Preset-Inhalte ersetzen. Eigene Reihenfolgen und Drittanbieter-Kombinationen
+sind nicht pauschal geprüft. Prüfe die Kompositionskette mit
+`specify preset resolve plan-template` und die erzeugten Agentenflächen.
+`specify check` prüft Werkzeuge, nicht die Wahrheit der Security-Evidence.
+
+*Priority is resolution precedence, not execution order: lower numbers win
+precedence. Append adds, wrap nests, and replace can hide same-name layers;
+project overrides can replace preset content. Custom ordering and third-party
+combinations are not universally tested. Inspect plan-template resolution and
+generated agent instructions. Specify check checks tools, not security evidence.*
+
+Leserpfad / Reader path:
+[Installation](#installation--installation) →
+[Evidenzvorlagen / Evidence Templates](#evidenzvorlagen--evidence-templates) →
+[Prüfung / Verification](#prüfung--verification) →
+[Fehlersuche / Troubleshooting](#fehlersuche--troubleshooting).
+
 Dieses Standard-Preset bringt sichere Code-Erzeugung, Secure-SDLC-Nachweise,
 MSL-Governance, Supply-Chain-Transparenz und regulatorische
 Anwendbarkeitsprüfung in Spec-Kit-Workflows. Es bleibt bewusst auf Code,
@@ -122,16 +188,17 @@ Dieses Preset ist die erste Stufe der normalen Governance-Matrix:
 
 | Priority | Preset |
 |---:|---|
-| 10 | `security-governance` |
-| 20 | `architecture-governance` |
-| 30 | `isaqb-architecture-governance` |
-| 40 | `a11y-governance` |
-| 50 | `cross-platform-governance` |
-| 60 | `agent-parity-governance` |
+| 10 | [security-governance](https://github.com/hindermath/spec-kit-preset-security-governance) |
+| 20 | [architecture-governance](https://github.com/hindermath/spec-kit-preset-architecture-governance) |
+| 30 | [isaqb-architecture-governance](https://github.com/hindermath/spec-kit-preset-isaqb-architecture-governance) |
+| 40 | [a11y-governance](https://github.com/hindermath/spec-kit-preset-a11y-governance) |
+| 50 | [cross-platform-governance](https://github.com/hindermath/spec-kit-preset-cross-platform-governance) |
+| 60 | [agent-parity-governance](https://github.com/hindermath/spec-kit-preset-agent-parity-governance) |
 
-*Install this preset first in the standard governance matrix. Later presets
-can add architecture, accessibility, cross-platform, and agent-parity rules
-without weakening the security baseline.*
+*Priority 10 gives this preset high resolution precedence in the recommended
+composition, not an execution schedule. Other presets can add architecture,
+accessibility, cross-platform and parity guidance; inspect the effective
+composition to ensure security requirements remain present.*
 
 ## Quellkapitel / Source Chapters
 
@@ -214,7 +281,7 @@ be referenced from planning artifacts.
 ```bash
 specify preset list
 specify preset info security-governance
-specify preset resolve
+specify preset resolve regulatory-applicability-template
 specify check
 ```
 
@@ -228,8 +295,9 @@ locations or explicitly plans their creation.*
 
 ### Security wirkt doppelt / Security Appears Twice
 
-Prüfe mit `specify preset resolve`, ob das Preset mehrfach installiert wurde
-oder ob lokale Templates denselben Abschnitt bereits enthalten.
+Prüfe mit `specify preset list` den Installationsbestand und mit
+`specify preset resolve plan-template` die Kompositionskette. Prüfe zusätzlich,
+ob lokale Templates denselben Abschnitt bereits enthalten.
 
 ### N/A ist unklar / N/A Is Unclear
 
