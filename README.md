@@ -1,6 +1,13 @@
 # Security Governance Preset
 
-Version: `0.7.1`
+Patch **0.7.2** liefert die verbesserte zweisprachige Einstiegs- und
+Kompositionsdokumentation. Verhalten und Berechtigungsgrenzen bleiben erhalten.
+[Release-Nachweis / Release record](docs/release-0.7.2-validation.md).
+
+*Patch 0.7.2 packages the improved bilingual getting-started and composition
+guide. Behavior and authority boundaries remain unchanged.*
+
+Version: `0.7.2`
 Status: stable release; professional review and native CI completed
 Priority: `10`
 Requires: Spec-Kit `>=0.8.0` (uses the `wrap` and `append` composition
@@ -171,7 +178,7 @@ Regulatory content is unchanged from v0.7.0. Historical tags and archives
 remain immutable; release and consumer integration evidence remain separate.*
 
 ```bash
-specify preset add --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.7.1.zip --priority 10
+specify preset add --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.7.2.zip --priority 10
 specify preset info security-governance
 ```
 
