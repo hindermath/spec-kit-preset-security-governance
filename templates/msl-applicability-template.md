@@ -70,3 +70,15 @@
 
 - Additional mitigations needed:
 - Related evidence:
+
+## Nutzungshilfe / Reader help
+
+DE: Sichere Entwicklung planen und begründen, ohne eine bestandene Sicherheitsprüfung vorzutäuschen. Diese Vorlage ist ein auszufüllender Starter, kein bestandener Nachweis. Vorhandene passende Evidence weiterverwenden.
+Die bestehenden technischen Feldnamen und Statuswerte nicht übersetzen oder
+nur zum Bestehen eines Tests verändern. Einführung, Begriffe, Beispiel,
+Ergebnis und Fehlerhilfe stehen im [deutschen Leserpfad](https://github.com/hindermath/spec-kit-preset-security-governance/blob/main/docs/user-guide.md).
+
+EN: Plan and explain secure development without claiming a passed security assessment. This template is a starter to complete, not passed evidence. Reuse suitable existing evidence.
+Keep technical field names and states unchanged; never alter them just to pass.
+See the [English reader path](https://github.com/hindermath/spec-kit-preset-security-governance/blob/main/docs/user-guide.EN.md)
+for introduction, terms, example, result and troubleshooting.

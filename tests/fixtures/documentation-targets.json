@@ -1,0 +1,61 @@
+{
+  "purpose": "Test-only candidate documentation cohort; not an installation matrix, release claim or consumer source lock.",
+  "presets": {
+    "security-governance": {
+      "version": "0.7.3",
+      "priority": 10
+    },
+    "secure-development-assurance-governance": {
+      "version": "0.1.7",
+      "priority": 15
+    },
+    "architecture-governance": {
+      "version": "0.6.4",
+      "priority": 20
+    },
+    "isaqb-architecture-governance": {
+      "version": "0.2.4",
+      "priority": 30
+    },
+    "a11y-governance": {
+      "version": "0.4.5",
+      "priority": 40
+    },
+    "cross-platform-governance": {
+      "version": "0.2.4",
+      "priority": 50
+    },
+    "agent-parity-governance": {
+      "version": "0.4.4",
+      "priority": 60
+    },
+    "model-routing-governance": {
+      "version": "0.1.6",
+      "priority": 61
+    },
+    "intake-authoring-governance": {
+      "version": "0.3.9",
+      "priority": 64
+    },
+    "intake-review-governance": {
+      "version": "0.2.6",
+      "priority": 65
+    },
+    "intake-sequencing-governance": {
+      "version": "0.2.10",
+      "priority": 66
+    },
+    "autonomous-run-governance": {
+      "version": "0.4.6",
+      "priority": 70
+    },
+    "parallel-autonomous-run-governance": {
+      "version": "0.2.8",
+      "priority": 80
+    },
+    "project-statistics-governance": {
+      "version": "0.1.2",
+      "priority": 90
+    }
+  }
+}
