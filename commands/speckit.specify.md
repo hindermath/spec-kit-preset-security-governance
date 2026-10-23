@@ -40,3 +40,15 @@ Use regulatory-applicability-template as the index and link
 gdpr-applicability-template, ai-act-applicability-template,
 cra-applicability-template, nis2-applicability-template and
 dora-applicability-template where relevant. An unfilled record is not evidence.
+
+## Nutzungshilfe / Reader help
+
+DE: Sichere Entwicklung planen und begründen, ohne eine bestandene Sicherheitsprüfung vorzutäuschen. Diese Command-Erklärung ändert keine Berechtigungen oder Voraussetzungen.
+Die bestehenden technischen Feldnamen und Statuswerte nicht übersetzen oder
+nur zum Bestehen eines Tests verändern. Einführung, Begriffe, Beispiel,
+Ergebnis und Fehlerhilfe stehen im [deutschen Leserpfad](https://github.com/hindermath/spec-kit-preset-security-governance/blob/main/docs/user-guide.md).
+
+EN: Plan and explain secure development without claiming a passed security assessment. This command explanation changes no authority or prerequisites.
+Keep technical field names and states unchanged; never alter them just to pass.
+See the [English reader path](https://github.com/hindermath/spec-kit-preset-security-governance/blob/main/docs/user-guide.EN.md)
+for introduction, terms, example, result and troubleshooting.

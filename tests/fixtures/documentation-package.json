@@ -1,0 +1,12 @@
+{
+  "id": "security-governance",
+  "version": "0.7.3",
+  "priority": 10,
+  "readers": [
+    "docs/user-guide.md",
+    "docs/user-guide.EN.md",
+    "docs/documentation-closeout.md"
+  ],
+  "sourceBaseCommit": "21df666b0742d164a7f090ff5f5e3c136fef721d",
+  "preserveHistoricalEvidence": true
+}
