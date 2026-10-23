@@ -25,6 +25,11 @@ function Assert-DocRequirement {
     if (-not $Condition) { throw "Documentation contract: $Message" }
     $script:checks++
 }
+function Test-DocManifestSchema {
+    param([string]$Text)
+    # Git may materialize Windows checkouts with CRLF; the schema stays exact.
+    return [regex]::IsMatch($Text, '(?m)^schema_version: "1\.0"\r?$')
+}
 function Test-DocVersionMarker {
     param([string]$Text, [string]$Version)
     $markers = [regex]::Matches($Text, '<!-- current-package: ([0-9.]+) -->')
@@ -71,7 +76,10 @@ $cohort = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'fixtures/documentat
 $manifest = [IO.File]::ReadAllText((Join-Path $root 'preset.yml'))
 $id = [regex]::Match($manifest, '(?m)^  id: "([^"]+)"').Groups[1].Value
 $version = [regex]::Match($manifest, '(?m)^  version: "([^"]+)"').Groups[1].Value
-Assert-DocRequirement ($manifest -match '(?m)^schema_version: "1\.0"$') 'manifest schema remains 1.0'
+Assert-DocRequirement (Test-DocManifestSchema $manifest) 'manifest schema remains 1.0'
+Assert-DocRequirement (Test-DocManifestSchema ("schema_version: " + '"1.0"' + "`n")) 'LF manifest schema accepted'
+Assert-DocRequirement (Test-DocManifestSchema ("schema_version: " + '"1.0"' + "`r`n")) 'CRLF manifest schema accepted'
+Assert-DocRequirement (-not (Test-DocManifestSchema ("schema_version: " + '"2.0"' + "`r`n"))) 'wrong schema still rejected'
 Assert-DocRequirement ($package.id -ceq $id -and $package.version -ceq $version) 'package fixture matches manifest'
 Assert-DocRequirement ($cohort.presets.ContainsKey($id) -and $cohort.presets[$id].version -ceq $version) 'candidate cohort version'
 Assert-DocRequirement ($cohort.presets.Count -eq 14) '14 candidate entries'
