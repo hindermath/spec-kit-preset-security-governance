@@ -1,14 +1,16 @@
 # User guide: security-governance
 
-<!-- current-package: 0.7.3 -->
+<!-- current-package: 0.7.4 -->
+
+Package identity: **v0.7.4**. [Preparation and publication boundary](release-0.7.4-validation.md). The release page, not this preparation snapshot, proves publication and the external archive hash. Earlier version records below remain historical.
 
 [Release-Abschluss und Verbesserungsprofil / Publication closeout and improvement profile](release-0.7.3-validation.md).
 
-The later main-branch documentation follow-up does not change the existing tag archive.
+The linked base-package evidence remains historical; this package includes the source corrections as a new version.
 
 [Deutsch](user-guide.md) · [Preset reference](../README.md)
 
-Published package **v0.7.3**. Verify the actually published version on the [release page](https://github.com/hindermath/spec-kit-preset-security-governance/releases). This guide grants no merge, release or project authority.
+Historical base package **v0.7.3**. Verify the actually published version on the [release page](https://github.com/hindermath/spec-kit-preset-security-governance/releases). This guide grants no merge, release or project authority.
 
 Contents: [Start](#start) · [Example](#example) · [Terms](#terms) · [Routing](#routing) · [Troubleshooting](#help) · [References](#references)
 
