@@ -158,4 +158,6 @@ if ($CohortRoot) {
     Assert-DocRequirement ($count -eq 49) '49 declarations; no skipped missing catalogs'
 }
 "PASS: $script:checks documentation assertions; own declarations=$ownCount; no models/network/writes."
+# DE/EN: Publication/history semantics remain separate from runtime contracts.
+& (Join-Path $PSScriptRoot 'test-release-status.ps1')
 exit 0

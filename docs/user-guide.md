@@ -2,9 +2,13 @@
 
 <!-- current-package: 0.7.3 -->
 
+[Release-Abschluss und Verbesserungsprofil / Publication closeout and improvement profile](release-0.7.3-validation.md).
+
+Der spätere Dokumentationsnachlauf auf main ändert das bestehende Tag-ZIP nicht.
+
 [English](user-guide.EN.md) · [Preset-Referenz](../README.md)
 
-Quellkandidat **v0.7.3**. Den tatsächlich veröffentlichten Stand auf der [Release-Seite](https://github.com/hindermath/spec-kit-preset-security-governance/releases) prüfen. Dieser Leitfaden erteilt keine Merge-, Release- oder Projektfreigabe.
+Veröffentlichtes Paket **v0.7.3**. Den tatsächlich veröffentlichten Stand auf der [Release-Seite](https://github.com/hindermath/spec-kit-preset-security-governance/releases) prüfen. Dieser Leitfaden erteilt keine Merge-, Release- oder Projektfreigabe.
 
 Inhalt: [Start](#start) · [Beispiel](#example) · [Begriffe](#terms) · [Routing](#routing) · [Fehlerhilfe](#help) · [Referenzen](#references)
 
