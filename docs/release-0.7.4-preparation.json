@@ -1,0 +1,14 @@
+{
+  "release_status": "NotEstablishedAtPreparation",
+  "candidate_status": "Prepared",
+  "packageVersion": "0.7.4",
+  "presetId": "security-governance",
+  "externalPublicationEvidence": "https://github.com/hindermath/spec-kit-preset-security-governance/releases/tag/v0.7.4",
+  "documentationPr": "https://github.com/hindermath/spec-kit-preset-security-governance/pull/11",
+  "schemaVersion": 1,
+  "historicalPublicationVersion": "0.7.3",
+  "runtimeChanged": false,
+  "generatorSchemaChanged": false,
+  "preparedAt": "2026-10-24T12:50:04.9177630+00:00",
+  "sourceCommit": "f34e831b71f6760c23cccf85f43b7f87c04482eb"
+}

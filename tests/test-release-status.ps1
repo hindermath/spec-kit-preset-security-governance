@@ -22,6 +22,25 @@ function Assert-ReleaseStatus {
     if (-not $Condition) { throw "Release-status contract: $Message" }
     $script:releaseChecks++
 }
+function Test-ReleasePreparation {
+    param($Value, [string]$Id, [string]$PackageVersion, [string]$HistoricalVersion, [bool]$MetadataCorrection)
+    try {
+        $null = [DateTimeOffset]::Parse([string]$Value.preparedAt, [Globalization.CultureInfo]::InvariantCulture)
+        return $Value.schemaVersion -eq 1 -and $Value.presetId -ceq $Id -and
+            $Value.packageVersion -ceq $PackageVersion -and
+            $Value.historicalPublicationVersion -ceq $HistoricalVersion -and
+            [version]$HistoricalVersion -lt [version]$PackageVersion -and
+            $Value.candidate_status -ceq 'Prepared' -and
+            $Value.release_status -ceq 'NotEstablishedAtPreparation' -and
+            $Value.sourceCommit -cmatch '^[a-f0-9]{40}$' -and
+            $Value.externalPublicationEvidence -ceq
+                "https://github.com/hindermath/spec-kit-preset-$Id/releases/tag/v$PackageVersion" -and
+            $Value.runtimeChanged -is [bool] -and $Value.runtimeChanged -eq $MetadataCorrection -and
+            (-not $MetadataCorrection -or ($Value.metadataCorrectionApproved -is [bool] -and
+                $Value.metadataCorrectionApproved -and -not [string]::IsNullOrWhiteSpace($Value.authorizationReference))) -and
+            $Value.generatorSchemaChanged -is [bool] -and -not $Value.generatorSchemaChanged
+    } catch { return $false }
+}
 function Get-ReleaseTextDigest {
     param([string]$Text)
     $normal = $Text.TrimStart([char]0xfeff).Replace("`r`n", "`n").Replace("`r", "`n")
@@ -80,7 +99,35 @@ function Test-ReleaseCurrentText {
 }
 $manifest = [IO.File]::ReadAllText((Join-Path $root 'preset.yml'))
 $id = [regex]::Match($manifest, '(?m)^  id: "([^"]+)"').Groups[1].Value
-$version = [regex]::Match($manifest, '(?m)^  version: "([^"]+)"').Groups[1].Value
+$packageVersion = [regex]::Match($manifest, '(?m)^  version: "([^"]+)"').Groups[1].Value
+$fixture = Get-Content (Join-Path $PSScriptRoot 'fixtures/documentation-package.json') -Raw | ConvertFrom-Json
+$version = $fixture.publicationEvidenceVersion
+$expectedMetadataCorrection = $id -cin @('intake-authoring-governance', 'intake-sequencing-governance')
+Assert-ReleaseStatus ($fixture.version -ceq $packageVersion -and [version]$version -lt [version]$packageVersion) 'explicit earlier publication record, not current-package publication'
+$preparation = Get-Content (Join-Path $root "docs/release-$packageVersion-preparation.json") -Raw | ConvertFrom-Json
+Assert-ReleaseStatus ($preparation.presetId -ceq $id -and $preparation.packageVersion -ceq $packageVersion -and
+    $preparation.historicalPublicationVersion -ceq $version -and $preparation.candidate_status -ceq 'Prepared' -and
+    $preparation.release_status -ceq 'NotEstablishedAtPreparation' -and $preparation.runtimeChanged -eq $expectedMetadataCorrection -and
+    -not $preparation.generatorSchemaChanged) 'preparation is separate from actual publication'
+Assert-ReleaseStatus (Test-ReleasePreparation $preparation $id $packageVersion $version $expectedMetadataCorrection) 'strict preparation binding'
+foreach ($mutate in @(
+    { param($x) $x.packageVersion = '99.99.99' },
+    { param($x) $x.historicalPublicationVersion = '99.99.99' },
+    { param($x) $x.candidate_status = 'Published' },
+    { param($x) $x.release_status = 'Published' },
+    { param($x) $x.runtimeChanged = -not $x.runtimeChanged },
+    { param($x) $x.generatorSchemaChanged = 'false' },
+    { param($x) $x.sourceCommit = 'invalid' },
+    { param($x) $x.preparedAt = 'invalid' },
+    { param($x) $x.externalPublicationEvidence = 'https://example.invalid/release' }
+)) {
+    $copy = $preparation | ConvertTo-Json | ConvertFrom-Json
+    & $mutate $copy
+    Assert-ReleaseStatus (-not (Test-ReleasePreparation $copy $id $packageVersion $version $expectedMetadataCorrection)) 'false preparation/publication fixture rejected'
+}
+$sourceCommit = @(& git -C $root rev-parse --verify "$($preparation.sourceCommit)^{commit}" 2>$null)
+Assert-ReleaseStatus ($LASTEXITCODE -eq 0 -and $sourceCommit.Count -eq 1 -and
+    $sourceCommit[0] -ceq $preparation.sourceCommit) 'preparation source commit exists'
 $recordPath = Join-Path $root "docs/release-$version-publication.json"
 $record = Get-Content -LiteralPath $recordPath -Raw | ConvertFrom-Json -AsHashtable -Depth 100
 $document = [IO.File]::ReadAllText((Join-Path $root "docs/release-$version-validation.md"))
