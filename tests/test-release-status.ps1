@@ -1,4 +1,4 @@
-#Requires -Version 7.3
+﻿#Requires -Version 7.3
 <#
 .SYNOPSIS
 DE: Historischen Kandidatenstand und belegte Veröffentlichung getrennt prüfen.
@@ -87,7 +87,12 @@ $document = [IO.File]::ReadAllText((Join-Path $root "docs/release-$version-valid
 Assert-ReleaseStatus ($record.presetId -ceq $id -and $record.version -ceq $version) 'manifest identity'
 Assert-ReleaseStatus (Test-ReleaseBinding $record) 'publication evidence'
 Assert-ReleaseStatus (Test-ReleaseCurrentText $document $record) 'historical/current sections'
-Assert-ReleaseStatus (Test-ReleaseCurrentText ($document.Replace("`n", "`r`n")) $record) 'CRLF document'
+$lfDocument = $document.Replace("`r`n", "`n")
+$crlfDocument = $lfDocument.Replace("`n", "`r`n")
+Assert-ReleaseStatus (Test-ReleaseCurrentText $lfDocument $record) 'LF document'
+Assert-ReleaseStatus (Test-ReleaseCurrentText $crlfDocument $record) 'CRLF document'
+Assert-ReleaseStatus ($crlfDocument.Replace("`r`n", "`n").Replace("`n", "`r`n") -ceq
+    $crlfDocument) 'CRLF fixture is idempotent on an existing CRLF checkout'
 $normal = $document.Replace("`r`n", "`n")
 $historical = [regex]::Match($normal, '(?s)<!-- historical-candidate:start -->\n(.*?)<!-- historical-candidate:end -->').Groups[1].Value
 $original = ($normal -split "`n", 2)[0] + "`n" + $historical
