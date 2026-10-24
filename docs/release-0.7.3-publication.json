@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "presetId": "security-governance",
+  "version": "0.7.3",
+  "repository": "https://github.com/hindermath/spec-kit-preset-security-governance",
+  "candidate_status": "HistoricalCandidate",
+  "release_status": "Published",
+  "tag": "v0.7.3",
+  "tagCommit": "c66cabfbfdde532994bd3c0e63ebf843dadfa1c0",
+  "verifiedAt": "2026-10-24T10:55:18.6432180+00:00",
+  "release": {
+    "id": 422326288,
+    "url": "https://github.com/hindermath/spec-kit-preset-security-governance/releases/tag/v0.7.3",
+    "publishedAt": "2026-10-23T21:29:30.0000000+00:00",
+    "preRelease": false,
+    "draft": false
+  },
+  "archive": {
+    "sha256": "e43fdbc3af2334182ded8908f160313dc085882faf96532f29bfffbb7cfd8f9d",
+    "url": "https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.7.3.zip",
+    "status": "Verified",
+    "verifiedAt": "2026-10-24T10:55:18.6432180+00:00",
+    "bytes": 92656
+  },
+  "evidenceComplete": true,
+  "historicalDocumentSha256": "f436bf234c4b83b1c7a88267f98297c59c34d383b2e2317f337a6c0ca5bc23e4",
+  "comparison": {
+    "fromTag": "v0.6.2",
+    "toTag": "v0.7.3",
+    "toCommit": "c66cabfbfdde532994bd3c0e63ebf843dadfa1c0",
+    "url": "https://github.com/hindermath/spec-kit-preset-security-governance/compare/1b5e9e309d86b09aa74f036f3d7ed5829f34257b...c66cabfbfdde532994bd3c0e63ebf843dadfa1c0",
+    "fromCommit": "1b5e9e309d86b09aa74f036f3d7ed5829f34257b"
+  },
+  "improvements": [
+    {
+      "introducedIn": "v0.7.0",
+      "type": "ProfessionalContract",
+      "sourcePaths": [
+        "templates/regulatory-applicability-template.md",
+        "tests/test-regulatory-contract.ps1"
+      ],
+      "problem": {
+        "de": "Regulatorische Fragen brauchten getrennte Anwendbarkeits- und Zuständigkeitsnachweise.",
+        "en": "Regulatory questions needed separate applicability and ownership evidence."
+      },
+      "description": {
+        "de": "DS-GVO, KI-VO, CRA, NIS2 und DORA werden nach Produkt, Entwicklungswerkzeug und Organisation getrennt eingeordnet; offene Fragen bleiben sichtbar.",
+        "en": "GDPR, AI Act, CRA, NIS2 and DORA are assessed separately for product, development tooling and organisation; open questions stay visible."
+      },
+      "benefit": {
+        "de": "Lernende können begründen, was gilt und wer entscheiden muss; Ausbildung ist keine pauschale Ausnahme.",
+        "en": "Learners can explain applicability and who must decide; education is not a blanket exemption."
+      },
+      "commit": "ad0b642db325db6803b33ecd99bc7935b43d2d59"
+    },
+    {
+      "introducedIn": "v0.7.1",
+      "type": "Compatibility",
+      "sourcePaths": [
+        "README.md",
+        "tests/test-regulatory-contract.ps1"
+      ],
+      "problem": {
+        "de": "Der Installationsbefehl war nicht direkt als eine Zeile auswertbar.",
+        "en": "The installation command was not directly usable on one line."
+      },
+      "description": {
+        "de": "Installationszeile und passende Dokumentationsprüfung wurden abgestimmt; 0.7.2 präzisierte den Einstieg weiter.",
+        "en": "The install line and its documentation test were aligned; 0.7.2 further clarified the entry point."
+      },
+      "benefit": {
+        "de": "Ein kopierbarer Einstieg vermeidet Formatierungsfehler, ohne Sicherheitsergebnisse vorwegzunehmen.",
+        "en": "A copyable entry point avoids formatting errors without claiming security acceptance."
+      },
+      "commit": "7204bccbdf3565d4dd22424c7fa7a15c6a6e0eb3"
+    },
+    {
+      "introducedIn": "v0.7.3",
+      "type": "DocumentationUsability",
+      "sourcePaths": [
+        "docs/user-guide.md",
+        "docs/user-guide.EN.md",
+        "tests/test-documentation-closeout.ps1"
+      ],
+      "problem": {
+        "de": "Ein kurzer README-Einstieg erklärte die vollständigen Leserpfade und Grenzen noch nicht gleichwertig.",
+        "en": "The short README entry did not yet explain the complete reader journey and limits equally."
+      },
+      "description": {
+        "de": "Deutsch-/Englisch-Leitfäden, Command-/Vorlagen-Erklärungen und Dokumentationsregressionen wurden ergänzt. Frühere Einstiegsverbesserungen und der letzte Patch werden getrennt ausgewiesen.",
+        "en": "German/English guides, command/template explanations and documentation regressions were added. Earlier entry-point improvements and the final patch are reported separately."
+      },
+      "benefit": {
+        "de": "Lernende finden Voraussetzungen, Beispiel, Ergebnis und Fehlerhilfe. Neue Textklarheit ist keine neue Runtime-Funktion oder menschliche Abnahme.",
+        "en": "Learners can find prerequisites, an example, its result and troubleshooting. Clearer text is not a new runtime feature or human acceptance."
+      },
+      "commit": "c66cabfbfdde532994bd3c0e63ebf843dadfa1c0"
+    }
+  ],
+  "historicalValidation": {
+    "checks": [
+      {
+        "name": "Reader paths (windows-2022)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/hindermath/spec-kit-preset-security-governance/actions/runs/39992111985/job/120546183250",
+        "startedAt": "2026-10-23T17:04:53Z",
+        "completedAt": "2026-10-23T17:05:04Z",
+        "head": "9f1f0a2324204ff703409c24929dd2a0257acb3c"
+      },
+      {
+        "name": "contract (macos-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/hindermath/spec-kit-preset-security-governance/actions/runs/39992112079/job/120546183221",
+        "startedAt": "2026-10-23T17:06:31Z",
+        "completedAt": "2026-10-23T17:06:43Z",
+        "head": "9f1f0a2324204ff703409c24929dd2a0257acb3c"
+      },
+      {
+        "name": "Reader paths (ubuntu-24.04)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/hindermath/spec-kit-preset-security-governance/actions/runs/39992111985/job/120546183183",
+        "startedAt": "2026-10-23T17:04:53Z",
+        "completedAt": "2026-10-23T17:05:03Z",
+        "head": "9f1f0a2324204ff703409c24929dd2a0257acb3c"
+      },
+      {
+        "name": "contract (windows-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/hindermath/spec-kit-preset-security-governance/actions/runs/39992112079/job/120546183126",
+        "startedAt": "2026-10-23T17:04:52Z",
+        "completedAt": "2026-10-23T17:05:03Z",
+        "head": "9f1f0a2324204ff703409c24929dd2a0257acb3c"
+      },
+      {
+        "name": "contract (ubuntu-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/hindermath/spec-kit-preset-security-governance/actions/runs/39992112079/job/120546183084",
+        "startedAt": "2026-10-23T17:04:53Z",
+        "completedAt": "2026-10-23T17:05:00Z",
+        "head": "9f1f0a2324204ff703409c24929dd2a0257acb3c"
+      },
+      {
+        "name": "Reader paths (macos-15)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/hindermath/spec-kit-preset-security-governance/actions/runs/39992111985/job/120546182613",
+        "startedAt": "2026-10-23T17:06:42Z",
+        "completedAt": "2026-10-23T17:06:49Z",
+        "head": "9f1f0a2324204ff703409c24929dd2a0257acb3c"
+      }
+    ],
+    "pr": "https://github.com/hindermath/spec-kit-preset-security-governance/pull/10",
+    "mergeCommit": "c66cabfbfdde532994bd3c0e63ebf843dadfa1c0",
+    "reviewedHead": "9f1f0a2324204ff703409c24929dd2a0257acb3c"
+  },
+  "newDocumentationReview": "Pending exact-head human review; no merge or publication authority.",
+  "boundary": "Documentation source only; no new package, runtime behavior, approval, installation, catalog update or cancelled dynamic routing."
+}
