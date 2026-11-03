@@ -1,0 +1,26 @@
+# Wartung und Grenzen / Maintenance and boundaries: .github/DEPENDENCY-MAINTENANCE.md
+# Major-Updates bleiben einzeln; Sicherheitsupdates haben eigene Gruppen.
+# Major updates stay separate; security updates use independent groups.
+---
+version: 2
+updates:
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: monday
+    time: '09:50'
+    timezone: Europe/Berlin
+  open-pull-requests-limit: 5
+  groups:
+    github-actions-minor-patch:
+      applies-to: version-updates
+      patterns:
+      - "*"
+      update-types:
+      - minor
+      - patch
+    github-actions-security:
+      applies-to: security-updates
+      patterns:
+      - "*"
