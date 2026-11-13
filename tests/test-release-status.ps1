@@ -1,4 +1,4 @@
-﻿#Requires -Version 7.3
+#Requires -Version 7.3
 <#
 .SYNOPSIS
 DE: Historischen Kandidatenstand und belegte Veröffentlichung getrennt prüfen.
@@ -103,6 +103,7 @@ $packageVersion = [regex]::Match($manifest, '(?m)^  version: "([^"]+)"').Groups[
 $fixture = Get-Content (Join-Path $PSScriptRoot 'fixtures/documentation-package.json') -Raw | ConvertFrom-Json
 $version = $fixture.publicationEvidenceVersion
 $expectedMetadataCorrection = $id -cin @('intake-authoring-governance', 'intake-sequencing-governance')
+if ($packageVersion -ceq '0.7.5') { $expectedMetadataCorrection = $false }
 Assert-ReleaseStatus ($fixture.version -ceq $packageVersion -and [version]$version -lt [version]$packageVersion) 'explicit earlier publication record, not current-package publication'
 $preparation = Get-Content (Join-Path $root "docs/release-$packageVersion-preparation.json") -Raw | ConvertFrom-Json
 Assert-ReleaseStatus ($preparation.presetId -ceq $id -and $preparation.packageVersion -ceq $packageVersion -and

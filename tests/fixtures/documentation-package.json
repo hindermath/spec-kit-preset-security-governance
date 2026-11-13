@@ -1,6 +1,6 @@
 {
   "id": "security-governance",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "priority": 10,
   "readers": [
     "docs/user-guide.md",

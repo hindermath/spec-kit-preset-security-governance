@@ -21,6 +21,8 @@ Supportzusage.
 
 ## Sicherheitsbaseline
 
+- Während einer Prüfung muss der geprüfte Worktree unverändert bleiben. Seine Dateien gelten weiterhin als nicht vertrauenswürdig; Pfade und Inhalte müssen vor ihrer Verwendung geprüft werden.
+
 - Geheimnisse dürfen nicht in Git, Issues, Logs oder Prüfnachweisen gespeichert werden.
 - Eingaben aus Dateien, Prozessen, Netzwerken und Geräten gelten als nicht vertrauenswürdig und müssen vor ihrer Verwendung geprüft werden.
 - Preset-Installation und -Ausführung müssen Datei-, Prozess-, Konfigurations- und Workspace-Grenzen beachten. Nicht vertrauenswürdige Eingaben dürfen keine Pfadgrenzen umgehen, Befehle einschleusen oder ungeprüfte Schreib- und Veröffentlichungsrechte erhalten. Check-only und Vorschau dürfen keine operativen Änderungen auslösen.
@@ -73,6 +75,8 @@ released versions. There is no general support commitment for older versions,
 historical commits, or other forks.
 
 ## Security baseline
+
+- The worktree being checked must remain unchanged during a check. Its files remain untrusted; paths and content must be validated before use.
 
 - Secrets must not be stored in Git, issues, logs, or verification records.
 - Input from files, processes, networks, and devices is untrusted and must be checked before use.

@@ -1,8 +1,8 @@
 # User guide: security-governance
 
-<!-- current-package: 0.7.4 -->
+<!-- current-package: 0.7.5 -->
 
-Package identity: **v0.7.4**. [Preparation and publication boundary](release-0.7.4-validation.md). The release page, not this preparation snapshot, proves publication and the external archive hash. Earlier version records below remain historical.
+Package identity: **v0.7.5**. [Preparation and publication boundary](release-0.7.5-validation.md). The release page, not this preparation snapshot, proves publication and the external archive hash. Earlier version records below remain historical.
 
 [Release-Abschluss und Verbesserungsprofil / Publication closeout and improvement profile](release-0.7.3-validation.md).
 

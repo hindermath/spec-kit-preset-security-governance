@@ -1,10 +1,10 @@
 # Security Governance Preset
 
-<!-- current-package: 0.7.4 -->
+<!-- current-package: 0.7.5 -->
 
-Paketkennung: **v0.7.4**. [Vorbereitung und Veröffentlichungsgrenze](docs/release-0.7.4-validation.md). Die Release-Seite und der externe Archivnachweis belegen die Veröffentlichung, nicht dieser Vorbereitungsstand. Frühere Versionsnachweise unten bleiben historisch.
+Paketkennung: **v0.7.5**. [Vorbereitung und Veröffentlichungsgrenze](docs/release-0.7.5-validation.md). Die Release-Seite und der externe Archivnachweis belegen die Veröffentlichung, nicht dieser Vorbereitungsstand. Frühere Versionsnachweise unten bleiben historisch.
 
-<span lang="en">Package identity: v0.7.4. The release page and external archive evidence prove publication, not this preparation snapshot. Earlier version records below remain historical.</span>
+<span lang="en">Package identity: v0.7.5. The release page and external archive evidence prove publication, not this preparation snapshot. Earlier version records below remain historical.</span>
 
 [Release-Abschluss und Verbesserungsprofil / Publication closeout and improvement profile](docs/release-0.7.3-validation.md).
 
@@ -197,7 +197,7 @@ Regulatory content is unchanged from v0.7.0. Historical tags and archives
 remain immutable; release and consumer integration evidence remain separate.*
 
 ```bash
-specify preset add --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.7.4.zip --priority 10
+specify preset add --from https://github.com/hindermath/spec-kit-preset-security-governance/archive/refs/tags/v0.7.5.zip --priority 10
 specify preset info security-governance
 ```
 
